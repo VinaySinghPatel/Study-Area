@@ -8,10 +8,22 @@ connectTomongo();
 const app = express()
 const port = process.env.PORT;
 
+
+const allowedOrigins = [
+  'http://localhost:3000',
+  'https://67564946d8f04f4373e76ea3--deft-semifreddo-592c5a.netlify.app' // Local development
+   // Deployed frontend
+];
+
 app.use(cors({
-  origin: 'http://localhost:3000', // Allow requests from this origin
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
-  credentials: true, // Allow cookies and other credentials
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true // If you use cookies/authentication
 }));
 
 
