@@ -33,7 +33,7 @@ router.post('/createac',[
         username : req.body.username,
         name : req.body.name,
         email : req.body.email,
-        password : req.body.password,
+        password : SecPass,
         mobilenumber : req.body.mobilenumber
     })
         const data = {
