@@ -11,8 +11,9 @@ const port = process.env.PORT;
 
 const allowedOrigins = [
   'http://localhost:3000',
-  'https://67564946d8f04f4373e76ea3--deft-semifreddo-592c5a.netlify.app' // Local development
-   // Deployed frontend
+  'https://67564946d8f04f4373e76ea3--deft-semifreddo-592c5a.netlify.app' ,
+  'https://deft-semifreddo-592c5a.netlify.app/'
+
 ];
 
 app.use(cors({
@@ -23,7 +24,7 @@ app.use(cors({
       callback(new Error('Not allowed by CORS'));
     }
   },
-  credentials: true // If you use cookies/authentication
+  credentials: true 
 }));
 
 
