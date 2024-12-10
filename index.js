@@ -12,7 +12,8 @@ const port = process.env.PORT;
 const allowedOrigins = [
   'http://localhost:3000',
   'https://67564946d8f04f4373e76ea3--deft-semifreddo-592c5a.netlify.app' ,
-  'https://deft-semifreddo-592c5a.netlify.app/'
+  'https://deft-semifreddo-592c5a.netlify.app/',
+  'https://deft-semifreddo-592c5a.netlify.app'
 
 ];
 
